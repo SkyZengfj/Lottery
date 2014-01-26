@@ -1,0 +1,238 @@
+﻿<Window x:Class="Lottery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="2014 MC Lottery" Height="768" Width="1024" WindowStartupLocation="CenterScreen"
+        KeyUp="Window_KeyUp" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Resources>
+        <Storyboard x:Key="_sb_StartLottery_" AutoReverse="True">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="_doLottery_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-43"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="_sb_Splash_">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_splash_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="_sb_CyShow_">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="_canyuContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.45"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="_canyuContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.563"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="_canyuContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="211"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="_canyuContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="230"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="_sb_3djShow_">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="_3djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.45"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="_3djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.563"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="_3djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="211"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="_3djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="230"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="_sb_2djShow_">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="_2djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.45"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="_2djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.563"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="_2djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="211"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="_2djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="230"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="_sb_1djShow_">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="_1djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.45"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="_1djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.563"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="_1djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="211"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="_1djContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="230"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="_sb_tdjShow_">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="_tdjContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.45"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="_tdjContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.563"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="_tdjContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="211"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="_tdjContainer_">
+                <EasingDoubleKeyFrame KeyTime="0" Value="230"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Canvas>
+        <Canvas Name="_lotteryContainer_">
+            <Image Name="_mainBg_" Source="images/lottery_bg.png" Stretch="Fill" Width="1024" Height="768"></Image>
+            <Button Name="btnExit"  Content="X" HorizontalAlignment="Right" VerticalAlignment="Top" Width="20" Canvas.Right="10" Click="btnExit_Click" Canvas.Left="1000"/>
+            <Canvas Width="518" Height="356" Canvas.Left="108.5" Canvas.Top="265.5">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="images/personal_bg.png"/>
+                </Canvas.Background>
+                <Image Width="461" Height="296" Stretch="UniformToFill" Name="_personalContainer_" Canvas.Left="28.5" Canvas.Top="29" />
+            </Canvas>
+
+            <Image x:Name="_cy11_"  Width="50" Canvas.Left="733.5" Canvas.Top="474.5" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy12_"  Width="50" Canvas.Left="789" Canvas.Top="474.5" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy13_"  Width="50" Canvas.Left="845" Canvas.Top="474.5" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy14_"  Width="50" Canvas.Left="901" Canvas.Top="474.5" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy15_"  Width="50" Canvas.Left="957.5" Canvas.Top="474.5" Height="30" Stretch="Fill" />
+
+            <Image x:Name="_cy21_"  Width="50" Canvas.Left="733.5" Canvas.Top="509.5" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy22_"  Width="50" Canvas.Left="789" Canvas.Top="509.5" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy23_"  Width="50" Canvas.Left="845" Canvas.Top="509.5" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy24_"  Width="50" Canvas.Left="901" Canvas.Top="509.5" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy25_"  Width="50" Canvas.Left="957.5" Canvas.Top="509.5" Height="30" Stretch="Fill" />
+
+            <Image x:Name="_cy31_"  Width="50" Canvas.Left="733.5" Canvas.Top="547" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy32_"  Width="50" Canvas.Left="789" Canvas.Top="547" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy33_"  Width="50" Canvas.Left="845" Canvas.Top="547" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy34_"  Width="50" Canvas.Left="901" Canvas.Top="547" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy35_"  Width="50" Canvas.Left="957.5" Canvas.Top="547" Height="30" Stretch="Fill" />
+
+            <Image x:Name="_cy41_"  Width="50" Canvas.Left="733.5" Canvas.Top="583" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy42_"  Width="50" Canvas.Left="789" Canvas.Top="583" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy43_"  Width="50" Canvas.Left="845" Canvas.Top="583" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy44_"  Width="50" Canvas.Left="901" Canvas.Top="583" Height="30" Stretch="Fill" />
+            <Image x:Name="_cy45_"  Width="50" Canvas.Left="957.5" Canvas.Top="583" Height="30" Stretch="Fill" />
+
+            <Image x:Name="_31_"  Width="83" Canvas.Left="734" Canvas.Top="368" Height="50" Stretch="Fill" />
+            <Image x:Name="_32_"  Width="83" Canvas.Left="828" Canvas.Top="368" Height="50" Stretch="Fill" />
+            <Image x:Name="_33_"  Width="83" Canvas.Left="923.5" Canvas.Top="368" Height="50" Stretch="Fill" />
+
+            <Image x:Name="_21_"  Width="100" Canvas.Left="765" Canvas.Top="257" Height="60" Stretch="Fill" />
+            <Image x:Name="_22_"  Width="100" Canvas.Left="882.332" Canvas.Top="257" Height="60" Stretch="Fill" />
+
+            <Image x:Name="_11_"  Width="123" Canvas.Left="882.332" Canvas.Top="125.5" Height="76" Stretch="Fill" />
+
+            <Image x:Name="_t1_"  Width="123" Canvas.Left="738.5" Canvas.Top="125.5" Height="76" Stretch="Fill" />
+
+            <Image Name="_doLottery_" Width="85.5" Height="196.5" Source="images/do_lottery.png" Stretch="Fill" Canvas.Left="561" Canvas.Top="-43" />
+        </Canvas>
+
+        <Canvas Name="_canyuContainer_" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Image Source="images/canyu_bg.png" Stretch="Fill" Width="712" Height="768" />
+            <Image Name="_canyu1_"  Width="198" Height="122" Canvas.Left="147" Canvas.Top="240" Stretch="Fill"/>
+            <Image Name="_canyu2_"  Width="198" Height="122" Canvas.Left="402" Canvas.Top="240" Stretch="Fill"/>
+            <Image Name="_canyu3_"  Width="198" Height="122" Canvas.Left="31" Canvas.Top="394.5" Stretch="Fill"/>
+            <Image Name="_canyu4_"  Width="198" Height="122" Canvas.Left="262" Canvas.Top="394.5" Stretch="Fill"/>
+            <Image Name="_canyu5_"  Width="198" Height="122" Canvas.Left="491" Canvas.Top="394.5" Stretch="Fill"/>
+        </Canvas>
+
+        <Canvas Name="_3djContainer_" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Image Source="images/3dj.png" Stretch="Fill" Width="712" Height="768" />
+            <Image Name="_3dj1_"  Width="266" Height="164" Canvas.Left="234" Canvas.Top="219.5" Stretch="Fill"/>
+            <Image Name="_3dj2_"  Width="266" Height="164" Canvas.Left="61" Canvas.Top="432" Stretch="Fill"/>
+            <Image Name="_3dj3_"  Width="266" Height="164" Canvas.Left="403" Canvas.Top="432" Stretch="Fill"/>
+        </Canvas>
+
+        <Canvas Name="_2djContainer_" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Image Source="images/2dj.png" Stretch="Fill" Width="712" Height="768" />
+            <Image Name="_2dj1_"  Width="267" Height="162" Canvas.Left="61" Canvas.Top="254.5" Stretch="Fill"/>
+            <Image Name="_2dj2_"  Width="267" Height="162" Canvas.Left="404" Canvas.Top="254.5" Stretch="Fill"/>
+        </Canvas>
+
+        <Canvas Name="_1djContainer_" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Image Source="images/1dj.png" Stretch="Fill" Width="712" Height="768" />
+            <Image Name="_1dj1_"  Width="460.5" Height="294" Canvas.Left="133" Canvas.Top="292" Stretch="Fill"/>
+        </Canvas>
+
+        <Canvas Name="_tdjContainer_" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Image Source="images/tdj.png" Stretch="Fill" Width="712" Height="768" />
+            <Image Name="_tdj1_"  Width="457" Height="289.5"  Canvas.Left="134.5" Canvas.Top="293.5" Stretch="Fill"/>
+        </Canvas>
+
+        <Image Name="_splash_" Source="images/splash.png" Stretch="Fill" Width="712" Height="768"/>
+    </Canvas>
+</Window>
